@@ -5,7 +5,7 @@ jjwt:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/mySecurityProjectApplication
+    url: jdbc:postgresql://localhost:5432/mysecuritydb
     username: postgres
     password: Vl020282
     driver-class-name: org.postgresql.Driver
