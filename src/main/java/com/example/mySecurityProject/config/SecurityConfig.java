@@ -43,8 +43,6 @@ public class SecurityConfig {
 //                            .requestMatchers("/secured").authenticated()
 //                            .requestMatchers("/info").authenticated()
                             .requestMatchers("/auth/**").permitAll()
-//                           .requestMatchers("/users/getById/**").hasRole("USER")
-//                            .requestMatchers("/users/**").hasRole("USER")
                                     .anyRequest().permitAll()
                     )
                     .sessionManagement(session -> session
