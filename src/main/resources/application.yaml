@@ -10,8 +10,10 @@ spring:
     password: Vl020282
     driver-class-name: org.postgresql.Driver
   jpa:
+#    defer-datasource-initialization: true
     hibernate:
       ddl-auto: update
+
       #      ddl-auto: create //если такая настройка база данных будет создаваться заново (пустая) при перезапуске проекта
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -20,3 +22,6 @@ spring:
       hibernate:
         format_sql: true
         default_schema: public
+#  sql:
+#    init:
+#      mode: always
