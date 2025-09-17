@@ -25,3 +25,5 @@ spring:
 #  sql:
 #    init:
 #      mode: always
+upload:
+  path: D:\Program\Java\Spring\mySecurityProject\src\main\resources

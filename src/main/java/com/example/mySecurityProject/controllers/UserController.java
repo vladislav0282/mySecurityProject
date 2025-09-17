@@ -1,8 +1,4 @@
 package com.example.mySecurityProject.controllers;
-
-import com.example.mySecurityProject.domain.user.User;
-import com.example.mySecurityProject.dto.RegistrationUserDto;
-import com.example.mySecurityProject.exeptions.UserAlreadyExistExeption;
 import com.example.mySecurityProject.exeptions.UserNotFoundExeption;
 import com.example.mySecurityProject.exeptions.UsersNotFounExeptions;
 import com.example.mySecurityProject.services.UserService;
