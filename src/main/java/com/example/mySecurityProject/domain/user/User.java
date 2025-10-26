@@ -1,9 +1,13 @@
 package com.example.mySecurityProject.domain.user;
 
+import com.example.mySecurityProject.domain.shop.Basket;
+import com.example.mySecurityProject.domain.shop.Device;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,7 +15,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generates a new ID when a new record is added
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -23,6 +27,9 @@ public class User {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Basket> baskets = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(

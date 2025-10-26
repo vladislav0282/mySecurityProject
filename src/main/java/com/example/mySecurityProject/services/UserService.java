@@ -89,4 +89,11 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(() -> new UserNotFoundExeption("User not found with ID: " + userId));
         return new UserDto(existingUser.getId(), existingUser.getUsername(), existingUser.getName());
     }
+
+    public UserDto getByUsername(String username) throws UserNotFoundExeption {
+        User existingUser = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UserNotFoundExeption("User not found with Username: " + username));
+        return new UserDto(existingUser.getId(), existingUser.getUsername(), existingUser.getName());
+    }
+
 }

@@ -46,8 +46,8 @@ public class SecurityConfig {
 //                            .requestMatchers("/info").authenticated()
                             .requestMatchers("/auth/login", "/auth/registration", "/auth/refresh").permitAll()
                             .requestMatchers("/auth/checkauth").authenticated()
-                           .requestMatchers("/users/getById/**").hasRole("USER")
-                            .requestMatchers("/users/**").hasRole("USER")
+//                           .requestMatchers("/users/getById/**").hasRole("USER")
+                            .requestMatchers("/users/auth/**").hasRole("USER")
                                     .anyRequest().permitAll()
                     )
                     .sessionManagement(session -> session

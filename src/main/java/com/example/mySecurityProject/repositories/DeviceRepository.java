@@ -11,10 +11,20 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DeviceRepository extends JpaRepository<Device, Long> {
-    Optional<Device> findByDevicename(String devicename);
+
+    Optional<Device> findByDeviceName(String deviceName);
+    Optional<Device> findByCount(Integer count);
     Optional<Device> findByDeviceId(Long deviceId);
-    List<Device> findByType_Id(Long typeId);
-    List<Device> findByBrand_Id(Long brandId);
-    List<Device> findByBrand_IdAndType_Id(Long brandId, Long typeId);
-    Page<Device> findByBrand_IdAndType_Id(Long brandId, Long typeId, Pageable pageable);
+
+    // Уже есть (без пагинации):
+    List<Device> findByTypeId_Id(Long typeId);
+    List<Device> findByBrandId_Id(Long brandId);
+    List<Device> findByBrandId_IdAndTypeId_Id(Long brandId, Long typeId);
+
+    // Уже есть (с пагинацией):
+    Page<Device> findByBrandId_IdAndTypeId_Id(Long brandId, Long typeId, Pageable pageable);
+
+    // ДОБАВЬ ЭТИ ДВА (с пагинацией для одного фильтра):
+    Page<Device> findByBrandId_Id(Long brandId, Pageable pageable);
+    Page<Device> findByTypeId_Id(Long typeId, Pageable pageable);
 }

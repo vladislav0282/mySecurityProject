@@ -17,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/getAllUsers")
+    @GetMapping("auth/getAllUsers")
     public ResponseEntity getUsers() {
         try {
             return ResponseEntity.ok(userService.getAllUsers());
@@ -29,7 +29,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/getById/{userId}")
+    @GetMapping("auth/getById/{userId}")
 
         public ResponseEntity getUserById(@PathVariable long userId) {
             try {
@@ -40,6 +40,18 @@ public class UserController {
                 return ResponseEntity.badRequest().body("Error");
             }
         }
+
+    @GetMapping("/getUsername/{username}")
+
+    public ResponseEntity getUserByUsername(@PathVariable String username) {
+        try {
+            return ResponseEntity.ok(userService.getByUsername(username));
+        } catch (UserNotFoundExeption e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e){
+            return ResponseEntity.badRequest().body("Error");
+        }
+    }
 
 //    @PostMapping("/addUser")
 //    public ResponseEntity<?> createNewUser(@RequestBody RegistrationUserDto registrationUserDto) {
