@@ -116,6 +116,7 @@ public class BasketService {
         dto.setImg(basketDevice.getDevice().getImg());
         dto.setQuantity(basketDevice.getQuantity());
         dto.setAddedDate(basketDevice.getAddedDate());
+        dto.setPreviewImageId(basketDevice.getDevice().getPreviewImageId());
         return dto;
     }
 }

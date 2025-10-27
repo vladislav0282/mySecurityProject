@@ -16,4 +16,5 @@ public class BasketDeviceDTO {
     private String img;
     private Integer quantity;
     private LocalDateTime addedDate;
+    private Long previewImageId;
 }

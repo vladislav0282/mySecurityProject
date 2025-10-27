@@ -15,5 +15,6 @@ public class BasketDTO {
     private Long userId;
     private String username;
     private LocalDateTime createdDate;
+    private Long previewImageId;
     private List<BasketDeviceDTO> basketDevices;
 }
